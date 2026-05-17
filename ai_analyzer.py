@@ -47,7 +47,7 @@ Be honest, specific, and actionable. Avoid generic advice.
         
     try:
         response = client.models.generate_content(
-            model="gemini-1.5-flash",
+            model="gemini-3.1-pro-preview",
             contents=prompt
         )
         return response.text
