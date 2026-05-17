@@ -1,12 +1,14 @@
 # 🔍 GitHub Profile Analyzer — AI-Powered Developer Insights
 
-A command-line tool that analyzes any GitHub profile and generates intelligent insights using **Google Gemini AI**. Built with Python.
+A modern, full-stack web application that analyzes any GitHub profile and generates intelligent insights using **Google Gemini AI**. Built with **FastAPI** and Vanilla JS.
+
+🌐 **Live Demo:** [https://vercel.com/nidhish-kumar-m-s-projects/github-ai-analyzer](https://vercel.com/nidhish-kumar-m-s-projects/github-ai-analyzer) *(Replace this with your actual vercel.app URL once you have it)*
 
 ---
 
 ## 🚀 What It Does
 
-Give it any GitHub username → it fetches their public profile, repos, and language stats → sends it to Gemini AI → generates a structured developer report with:
+Enter any GitHub username → it fetches their public profile, repos, and language stats → sends it to Gemini AI → generates a structured developer report with:
 
 - 📊 Profile overview (repos, followers, stars, top languages)
 - 🤖 AI-generated developer summary
@@ -18,16 +20,17 @@ Give it any GitHub username → it fetches their public profile, repos, and lang
 
 ## 🛠️ Tech Stack
 
-| Tool | Purpose |
-|------|---------|
-| Python | Core language |
-| GitHub REST API | Fetch public profile data |
-| Google Gemini AI | Generate intelligent insights |
-| python-dotenv | Secure API key management |
+| Component | Technology | Purpose |
+|------|---------|---------|
+| **Backend** | Python & FastAPI | High-performance REST API |
+| **Frontend** | HTML, CSS, JavaScript | Premium dark mode UI with glassmorphism |
+| **Data Source** | GitHub REST API | Fetch public profile data |
+| **AI Engine** | Google Gemini AI | Generate intelligent developer insights |
+| **Deployment**| Vercel | Serverless hosting |
 
 ---
 
-## ⚙️ Setup & Installation
+## ⚙️ Setup & Installation (Local Development)
 
 ### 1. Clone the repository
 ```bash
@@ -57,8 +60,9 @@ GEMINI_API_KEY=your_gemini_key_here
 GITHUB_TOKEN=your_github_token_here
 ```
 
-### 5. Run the Project
-Run the analyzer on any GitHub username:
+### 5. Run the Local Server
+Start the FastAPI application using uvicorn:
 ```bash
-python3 main.py --user torvalds
+uvicorn api.index:app --reload
 ```
+Then, open your browser and go to `http://127.0.0.1:8000` to use the application!
