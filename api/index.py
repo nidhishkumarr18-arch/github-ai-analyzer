@@ -42,5 +42,6 @@ def analyze(user: str):
     })
 
 # Note: Vercel handles static files via vercel.json, 
-# but for local testing, we can mount public directory
-app.mount("/", StaticFiles(directory="public", html=True), name="public")
+# but for local testing, we can mount public directory if it exists
+if os.path.isdir("public"):
+    app.mount("/", StaticFiles(directory="public", html=True), name="public")

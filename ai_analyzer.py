@@ -4,7 +4,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+try:
+    client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+except Exception as e:
+    client = None
+    print(f"Warning: Failed to initialize Gemini client: {e}")
 
 def analyze_profile(data):
     top_langs = ", ".join(list(data["top_languages"].keys())[:5]) or "None detected"
@@ -38,8 +42,14 @@ Based on this data, provide:
 Be honest, specific, and actionable. Avoid generic advice.
 """
 
-    response = client.models.generate_content(
-        model="gemini-3-flash-preview",
-        contents=prompt
-    )
-    return response.text
+    if not client:
+        return "AI Insights are unavailable. Please ensure GEMINI_API_KEY is configured in Vercel."
+        
+    try:
+        response = client.models.generate_content(
+            model="gemini-1.5-flash",
+            contents=prompt
+        )
+        return response.text
+    except Exception as e:
+        return f"AI Analysis failed: {str(e)}"
