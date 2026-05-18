@@ -2,7 +2,7 @@
 
 A modern, full-stack web application that analyzes any GitHub profile and generates intelligent insights using **Google Gemini AI**. Built with **FastAPI** and Vanilla JS.
 
-🌐 **Live Demo:** [https://vercel.com/nidhish-kumar-m-s-projects/github-ai-analyzer](https://vercel.com/nidhish-kumar-m-s-projects/github-ai-analyzer)
+🌐 **Live Demo:** https://github-ai-analyzer-rust.vercel.app/
 
 ---
 
